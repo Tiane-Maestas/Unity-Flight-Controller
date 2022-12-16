@@ -1,0 +1,3 @@
+[submodule "Nebula"]
+	path = Nebula
+	url = https://github.com/Tiane-Maestas/Nebula.git
