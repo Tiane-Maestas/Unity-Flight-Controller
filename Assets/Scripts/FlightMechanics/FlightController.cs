@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class FlightController : MonoBehaviour
 {
-    public AnimationCurve toBeLiftCurve;
     //key-binds
     public bool throttleUp => Input.GetKey(KeyCode.Mouse0);
     public bool throttleDown => Input.GetKey(KeyCode.Mouse1);
