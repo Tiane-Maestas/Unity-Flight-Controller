@@ -352,31 +352,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3065493364800838391, guid: 6afef712215b7534da75989741e39c24, type: 3}
       propertyPath: toBeLiftCurve.m_Curve.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3065493364800838391, guid: 6afef712215b7534da75989741e39c24, type: 3}
       propertyPath: toBeLiftCurve.m_Curve.Array.data[1].time
-      value: 1
+      value: 0.60189116
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065493364800838391, guid: 6afef712215b7534da75989741e39c24, type: 3}
+      propertyPath: toBeLiftCurve.m_Curve.Array.data[2].time
+      value: 1.0430298
       objectReference: {fileID: 0}
     - target: {fileID: 3065493364800838391, guid: 6afef712215b7534da75989741e39c24, type: 3}
       propertyPath: toBeLiftCurve.m_Curve.Array.data[1].value
-      value: 1
+      value: 0.99357605
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065493364800838391, guid: 6afef712215b7534da75989741e39c24, type: 3}
+      propertyPath: toBeLiftCurve.m_Curve.Array.data[2].value
+      value: 0.64151
       objectReference: {fileID: 0}
     - target: {fileID: 3065493364800838391, guid: 6afef712215b7534da75989741e39c24, type: 3}
       propertyPath: toBeLiftCurve.m_Curve.Array.data[0].inSlope
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3065493364800838391, guid: 6afef712215b7534da75989741e39c24, type: 3}
       propertyPath: toBeLiftCurve.m_Curve.Array.data[1].inSlope
-      value: 2
+      value: -0.007176801
       objectReference: {fileID: 0}
     - target: {fileID: 3065493364800838391, guid: 6afef712215b7534da75989741e39c24, type: 3}
       propertyPath: toBeLiftCurve.m_Curve.Array.data[0].outSlope
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065493364800838391, guid: 6afef712215b7534da75989741e39c24, type: 3}
+      propertyPath: toBeLiftCurve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
       objectReference: {fileID: 0}
     - target: {fileID: 3065493364800838391, guid: 6afef712215b7534da75989741e39c24, type: 3}
       propertyPath: toBeLiftCurve.m_Curve.Array.data[1].outSlope
-      value: 2
+      value: -0.007176801
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065493364800838391, guid: 6afef712215b7534da75989741e39c24, type: 3}
+      propertyPath: toBeLiftCurve.m_Curve.Array.data[1].outWeight
+      value: 0.2072911
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6afef712215b7534da75989741e39c24, type: 3}

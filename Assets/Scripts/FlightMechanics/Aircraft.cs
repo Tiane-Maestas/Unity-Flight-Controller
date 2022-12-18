@@ -1,11 +1,10 @@
 using UnityEngine;
-using Nebula;
 using System.Collections.Generic;
 
 public abstract class Aircraft
 {
     // Components
-    protected Rigidbody _rigidBody;
+    protected Rigidbody _aircraftBody;
     protected List<AircraftEngine> _engines;
     protected List<AircraftWing> _wings;
 
@@ -13,11 +12,21 @@ public abstract class Aircraft
     protected Vector3 _thrust = new Vector3();
     protected Vector3 _lift = new Vector3();
 
-    public Aircraft(Rigidbody rigidBody, List<AircraftEngine> engines, List<AircraftWing> wings)
+    public Aircraft(Rigidbody aircraftBody)
     {
-        this._rigidBody = rigidBody;
-        this._engines = engines;
-        this._wings = wings;
+        this._aircraftBody = aircraftBody;
+        this._engines = new List<AircraftEngine>();
+        this._wings = new List<AircraftWing>();
+    }
+
+    public void AttachEngine(AircraftEngine engine)
+    {
+        this._engines.Add(engine);
+    }
+
+    public void AttachWing(AircraftWing wing)
+    {
+        this._wings.Add(wing);
     }
 
     public virtual void Update()
@@ -34,34 +43,47 @@ public abstract class Aircraft
     protected virtual void AddThrust()
     {
         float thrustMagnitude = 0;
+
         foreach (AircraftEngine engine in this._engines)
         {
             thrustMagnitude += engine.power * engine.throttle * Time.fixedDeltaTime;
         }
-        this._thrust = this._rigidBody.transform.forward * thrustMagnitude;
-        this._rigidBody.AddForce(this._thrust);
+
+        this._thrust = this._aircraftBody.transform.forward * thrustMagnitude;
+        this._aircraftBody.AddForce(this._thrust);
     }
 
     protected virtual void AddLift()
     {
-        Vector3 forward = this._rigidBody.transform.forward;
+        Vector3 forward = this._aircraftBody.transform.forward;
         Vector3 towardsForwardHorizon = new Vector3(forward.x, 0, forward.z);
+        towardsForwardHorizon.Normalize();
+
+        float liftMagnitude = 0;
+
         foreach (AircraftWing wing in this._wings)
         {
-            Vector3 wingWorldOrientation = Utils.RotateVector3ByDeg(forward, wing.orientation);
-            float angleOfAttack = Vector3.SignedAngle(towardsForwardHorizon, wingWorldOrientation, this._rigidBody.transform.right);
+            if (wing.orientation != AircraftWing.WingOrientation.Normal)
+                continue;
+
+            float angleOfAttack = Vector3.SignedAngle(towardsForwardHorizon, forward, this._aircraftBody.transform.right);
+            float curveModifier = wing.liftCurve.Evaluate(angleOfAttack);
+            liftMagnitude += wing.size * this._aircraftBody.velocity.magnitude * curveModifier; // Add Air density modifier here.
         }
-        // this._lift = this._rigidBody.transform.up * liftMagnitude;
+
+        this._lift = (liftMagnitude < Physics.gravity.magnitude) ? this._aircraftBody.transform.up * liftMagnitude : this._aircraftBody.transform.up * Physics.gravity.magnitude;
+        this._aircraftBody.AddForce(this._lift);
     }
 }
 
-public class AircraftEngine
+public class AircraftEngine : AircraftPart
 {
     public float mass;
     public float power;
     [RangeAttribute(0, 1)] public float throttle = 0;
     public AircraftEngine(float mass, float power)
     {
+        this.id = "AircraftEngine";
         this.mass = mass;
         this.power = power;
     }
@@ -72,20 +94,17 @@ public class AircraftEngine
     }
 }
 
-public struct AircraftWing
+public class AircraftWing : AircraftPart
 {
     public float mass;
     public float size;
     public LiftCurve liftCurve; // Test to see how velocity values greater than 1 work.
+    public enum WingOrientation { Normal, Rudder };
+    public WingOrientation orientation;
 
-
-    // JUST MAKE THIS A RUDDER OR FLAT WING
-    public Vector3 orientation; // This is how you angle wings from the defualt flat wing position.
-                                // Note: Rotate from forward position in degrees. Think from right, flat wing. 
-                                // (Ex. Rudder -> (90, 0, 0) i.e around (forward, up, right))
-
-    public AircraftWing(float mass, float size, LiftCurve liftCurve, Vector3 orientation)
+    public AircraftWing(float mass, float size, LiftCurve liftCurve, WingOrientation orientation)
     {
+        this.id = "AircraftWing" + orientation;
         this.mass = mass;
         this.size = size;
         this.liftCurve = liftCurve;
