@@ -302,6 +302,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3065493364800838376, guid: 6afef712215b7534da75989741e39c24, type: 3}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065493364800838376, guid: 6afef712215b7534da75989741e39c24, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3065493364800838386, guid: 6afef712215b7534da75989741e39c24, type: 3}
       propertyPath: m_Name
       value: TestPlane
@@ -404,8 +412,36 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterEngine.id
+      value: AircraftEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRudder.id
+      value: AircraftWing
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterEngine.mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
       propertyPath: _fighterEnginePower
       value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRearWing.id
+      value: AircraftWing
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRudder.mass
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRudder.size
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterEngine.power
+      value: 80000000
       objectReference: {fileID: 0}
     - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
       propertyPath: _fighterRearWingMass
@@ -414,6 +450,18 @@ PrefabInstance:
     - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
       propertyPath: _fighterRearWingSize
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRearWing.mass
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRearWing.size
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterForwardWing.id
+      value: AircraftWing
       objectReference: {fileID: 0}
     - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
       propertyPath: _fighterRudderWingMass
@@ -430,6 +478,18 @@ PrefabInstance:
     - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
       propertyPath: _fighterForwardWingSize
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterForwardWing.mass
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterForwardWing.size
+      value: 1000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRudder.orientation
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
       propertyPath: _fighterRearWingLiftCurve.m_Curve.Array.size
@@ -530,6 +590,90 @@ PrefabInstance:
     - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
       propertyPath: _fighterForwardWingLiftCurve.m_Curve.Array.data[1].outWeight
       value: 0.19877155
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRudder.liftCurve.animationCurveToLiftCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRearWing.liftCurve.animationCurveToLiftCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterForwardWing.liftCurve.animationCurveToLiftCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRudder.liftCurve.animationCurveToLiftCurve.m_Curve.Array.data[0].time
+      value: 0.0015907288
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRudder.liftCurve.animationCurveToLiftCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRudder.liftCurve.animationCurveToLiftCurve.m_Curve.Array.data[0].value
+      value: 0.41036987
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRudder.liftCurve.animationCurveToLiftCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRearWing.liftCurve.animationCurveToLiftCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRearWing.liftCurve.animationCurveToLiftCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRearWing.liftCurve.animationCurveToLiftCurve.m_Curve.Array.data[0].value
+      value: 0.4032898
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRearWing.liftCurve.animationCurveToLiftCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRudder.liftCurve.animationCurveToLiftCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRudder.liftCurve.animationCurveToLiftCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterForwardWing.liftCurve.animationCurveToLiftCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterForwardWing.liftCurve.animationCurveToLiftCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRearWing.liftCurve.animationCurveToLiftCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterForwardWing.liftCurve.animationCurveToLiftCurve.m_Curve.Array.data[0].value
+      value: 0.40093994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterForwardWing.liftCurve.animationCurveToLiftCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRearWing.liftCurve.animationCurveToLiftCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterForwardWing.liftCurve.animationCurveToLiftCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterForwardWing.liftCurve.animationCurveToLiftCurve.m_Curve.Array.data[0].outSlope
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3477936355228083357, guid: be396fa576be1754db65a3388f997b4b, type: 3}
       propertyPath: m_RootOrder

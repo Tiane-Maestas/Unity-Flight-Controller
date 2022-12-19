@@ -44,7 +44,6 @@ public abstract class Aircraft
         foreach (AircraftEngine engine in this._engines)
         {
             thrustMagnitude += engine.power * engine.throttle * Time.fixedDeltaTime;
-            Debug.Log(thrustMagnitude);
         }
 
         this._thrust = this._aircraftBody.transform.forward * thrustMagnitude;
@@ -69,15 +68,15 @@ public abstract class Aircraft
             liftMagnitude += wing.size * Mathf.Pow(this._aircraftBody.velocity.magnitude, 2) * curveModifier; // Add Air density modifier here.
         }
 
-        this._lift = (liftMagnitude < Physics.gravity.magnitude) ? this._aircraftBody.transform.up * liftMagnitude : this._aircraftBody.transform.up * Physics.gravity.magnitude;
+        this._lift = (liftMagnitude < Physics.gravity.magnitude) ? Vector3.up * liftMagnitude : Vector3.up * Physics.gravity.magnitude;
         this._aircraftBody.AddForce(this._lift);
     }
 
     // The input value should be a value between [-1, 1]
     public abstract void Throttle(float input);
-    public abstract void Roll(float input);
     public abstract void Pitch(float input);
     public abstract void Yaw(float input);
+    public abstract void Roll(float input);
 }
 
 /* Developer Notes:

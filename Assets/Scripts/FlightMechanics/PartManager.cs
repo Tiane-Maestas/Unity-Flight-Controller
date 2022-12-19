@@ -1,5 +1,6 @@
 using UnityEngine;
 using Nebula;
+using System;
 using System.Collections.Generic;
 
 // This class is what an AircraftBuilder uses to find and attach parts for an AircraftType
@@ -17,31 +18,23 @@ public class PartManager : Singleton<PartManager>
     List<AircraftPart> fighterParts = new List<AircraftPart>(); // 3
 
     [Header("Fighter"), Space, Header("Engine Info")]
-    [SerializeField] private int _fighterEngineMass = 500;
-    [SerializeField] private int _fighterEnginePower = 10000;
+    [SerializeField] private AircraftEngine _fighterEngine;
 
     [Space, Header("Wing Info")]
-    [SerializeField] private float _fighterForwardWingMass = 500;
-    [SerializeField] private float _fighterForwardWingSize = 100;
-    [SerializeField] private WingOrientation _fighterForwardWingOrientation = WingOrientation.Normal;
-    [SerializeField] private AnimationCurve _fighterForwardWingLiftCurve;
+    [SerializeField] private AircraftWing _fighterForwardWing;
+
     [Space]
-    [SerializeField] private float _fighterRearWingMass = 200;
-    [SerializeField] private float _fighterRearWingSize = 50;
-    [SerializeField] private WingOrientation _fighterRearWingOrientation = WingOrientation.Normal;
-    [SerializeField] private AnimationCurve _fighterRearWingLiftCurve;
+    [SerializeField] private AircraftWing _fighterRearWing;
+
     [Space]
-    [SerializeField] private float _fighterRudderWingMass = 100;
-    [SerializeField] private float _fighterRudderWingSize = 25;
-    [SerializeField] private WingOrientation _fighterRudderWingOrientation = WingOrientation.Rudder;
-    [SerializeField] private AnimationCurve _fighterRudderWingLiftCurve;
+    [SerializeField] private AircraftWing _fighterRudder;
 
     public void WriteFighterPartsList() // 4
     {
-        fighterParts.Add(new AircraftEngine(_fighterEngineMass, _fighterEnginePower));
-        fighterParts.Add(new AircraftWing(_fighterForwardWingMass, _fighterForwardWingSize, new LiftCurve(_fighterForwardWingLiftCurve), _fighterForwardWingOrientation));
-        fighterParts.Add(new AircraftWing(_fighterRearWingMass, _fighterRearWingSize, new LiftCurve(_fighterRearWingLiftCurve), _fighterRearWingOrientation));
-        fighterParts.Add(new AircraftWing(_fighterRudderWingMass, _fighterRudderWingSize, new LiftCurve(_fighterRudderWingLiftCurve), _fighterRudderWingOrientation));
+        fighterParts.Add(_fighterEngine);
+        fighterParts.Add(_fighterForwardWing);
+        fighterParts.Add(_fighterRearWing);
+        fighterParts.Add(_fighterRudder);
     }
 
     public List<AircraftPart> GetFighterParts() // 5
@@ -53,12 +46,14 @@ public class PartManager : Singleton<PartManager>
 }
 
 // This is the general AircraftPart all specific parts should inherit from.
+[Serializable]
 public abstract class AircraftPart
 {
     public string id;
 }
 
 #region Engine
+[Serializable]
 public class AircraftEngine : AircraftPart
 {
     public float mass;
@@ -80,6 +75,8 @@ public class AircraftEngine : AircraftPart
 
 #region Wing
 public enum WingOrientation { Normal, Rudder };
+
+[Serializable]
 public class AircraftWing : AircraftPart
 {
     public float mass;
@@ -98,9 +95,10 @@ public class AircraftWing : AircraftPart
 }
 
 // This just wraps an animation curve to a "lift curve" so I can the editor functionality.
+[Serializable]
 public struct LiftCurve
 {
-    AnimationCurve animationCurveToLiftCurve;
+    [SerializeField] private AnimationCurve animationCurveToLiftCurve;
 
     public LiftCurve(AnimationCurve animationCurve)
     {
