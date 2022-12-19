@@ -21,25 +21,22 @@ public abstract class Aircraft
 
     public void AttachEngine(AircraftEngine engine)
     {
+        this._aircraftBody.mass += engine.mass;
         this._engines.Add(engine);
     }
 
     public void AttachWing(AircraftWing wing)
     {
+        this._aircraftBody.mass += wing.mass;
         this._wings.Add(wing);
     }
 
-    public virtual void Update()
-    {
-
-    }
     public virtual void FixedUpdate()
     {
         this.AddThrust();
         this.AddLift();
     }
 
-    // Note: This simply adds thrust in the forward direction. No torques i.e. The position of the engine plays no role.
     protected virtual void AddThrust()
     {
         float thrustMagnitude = 0;
@@ -47,6 +44,7 @@ public abstract class Aircraft
         foreach (AircraftEngine engine in this._engines)
         {
             thrustMagnitude += engine.power * engine.throttle * Time.fixedDeltaTime;
+            Debug.Log(thrustMagnitude);
         }
 
         this._thrust = this._aircraftBody.transform.forward * thrustMagnitude;
@@ -63,68 +61,23 @@ public abstract class Aircraft
 
         foreach (AircraftWing wing in this._wings)
         {
-            if (wing.orientation != AircraftWing.WingOrientation.Normal)
+            if (wing.orientation != WingOrientation.Normal)
                 continue;
 
             float angleOfAttack = Vector3.SignedAngle(towardsForwardHorizon, forward, this._aircraftBody.transform.right);
             float curveModifier = wing.liftCurve.Evaluate(angleOfAttack);
-            liftMagnitude += wing.size * this._aircraftBody.velocity.magnitude * curveModifier; // Add Air density modifier here.
+            liftMagnitude += wing.size * Mathf.Pow(this._aircraftBody.velocity.magnitude, 2) * curveModifier; // Add Air density modifier here.
         }
 
         this._lift = (liftMagnitude < Physics.gravity.magnitude) ? this._aircraftBody.transform.up * liftMagnitude : this._aircraftBody.transform.up * Physics.gravity.magnitude;
         this._aircraftBody.AddForce(this._lift);
     }
-}
 
-public class AircraftEngine : AircraftPart
-{
-    public float mass;
-    public float power;
-    [RangeAttribute(0, 1)] public float throttle = 0;
-    public AircraftEngine(float mass, float power)
-    {
-        this.id = "AircraftEngine";
-        this.mass = mass;
-        this.power = power;
-    }
-
-    public void adjustThrottle(float newThrottle)
-    {
-        this.throttle = newThrottle;
-    }
-}
-
-public class AircraftWing : AircraftPart
-{
-    public float mass;
-    public float size;
-    public LiftCurve liftCurve; // Test to see how velocity values greater than 1 work.
-    public enum WingOrientation { Normal, Rudder };
-    public WingOrientation orientation;
-
-    public AircraftWing(float mass, float size, LiftCurve liftCurve, WingOrientation orientation)
-    {
-        this.id = "AircraftWing" + orientation;
-        this.mass = mass;
-        this.size = size;
-        this.liftCurve = liftCurve;
-        this.orientation = orientation;
-    }
-}
-
-// This just wraps an animation curve to a "lift curve" so I can the editor functionality.
-public class LiftCurve
-{
-    AnimationCurve animationCurveToLiftCurve;
-
-    public LiftCurve(AnimationCurve animationCurve)
-    {
-        this.animationCurveToLiftCurve = animationCurve;
-    }
-    public float Evaluate(float angleOfAttack)
-    {
-        return this.animationCurveToLiftCurve.Evaluate(angleOfAttack);
-    }
+    // The input value should be a value between [-1, 1]
+    public abstract void Throttle(float input);
+    public abstract void Roll(float input);
+    public abstract void Pitch(float input);
+    public abstract void Yaw(float input);
 }
 
 /* Developer Notes:

@@ -7,7 +7,17 @@ public class FlightController : MonoBehaviour
 
     private void Awake()
     {
-        AircraftFactory aircraftFactory = new AircraftFactory();
-        this._aircraft = aircraftFactory.CreateAircraft(this.aircraftType, GetComponent<Rigidbody>());
+        AircraftFactory aircraftFactory = new AircraftFactory(GetComponent<Rigidbody>());
+        this._aircraft = aircraftFactory.CreateAircraft(this.aircraftType);
+    }
+
+    private void Update()
+    {
+        this._aircraft.Throttle(1);
+    }
+
+    private void FixedUpdate()
+    {
+        this._aircraft.FixedUpdate();
     }
 }

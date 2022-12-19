@@ -10,20 +10,21 @@ public class FighterBuilder : AircraftBuilder
 
     #endregion
 
-    public FighterBuilder()
+    public FighterBuilder(Rigidbody aircraftBody) : base(aircraftBody)
     {
         this._parts = PartManager.Instance.GetFighterParts();
     }
 
-    public override void AttachParts(Rigidbody aircraftBody)
+    public override void AttachParts()
     {
-        this._aircraft = new Fighter(aircraftBody);
-        // this._aircraft.AttachEngine();
-        // this._aircraft.AttachWing();
+        // Always construct the aircraft body before the rest of the parts.
+        this._aircraft = new Fighter(this._aircraftBody);
+
+        base.AttachParts();
     }
 
     public override Aircraft Build()
     {
-        throw new System.NotImplementedException();
+        return this._aircraft;
     }
 }

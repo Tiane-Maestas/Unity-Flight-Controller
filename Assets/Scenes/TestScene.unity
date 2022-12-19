@@ -396,3 +396,188 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6afef712215b7534da75989741e39c24, type: 3}
+--- !u!1001 &3477936356514700466
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterEnginePower
+      value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRearWingMass
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRearWingSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRudderWingMass
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRudderWingSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterForwardWingMass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterForwardWingSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRearWingLiftCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRudderWingLiftCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterForwardWingLiftCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRearWingLiftCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRearWingLiftCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRudderWingLiftCurve.m_Curve.Array.data[1].time
+      value: 0.47449997
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRudderWingLiftCurve.m_Curve.Array.data[2].time
+      value: 0.9968413
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterForwardWingLiftCurve.m_Curve.Array.data[1].time
+      value: 0.60093963
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterForwardWingLiftCurve.m_Curve.Array.data[2].time
+      value: 0.9968262
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRearWingLiftCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRudderWingLiftCurve.m_Curve.Array.data[1].value
+      value: 0.7571301
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRudderWingLiftCurve.m_Curve.Array.data[2].value
+      value: 0.9905661
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterForwardWingLiftCurve.m_Curve.Array.data[1].value
+      value: 0.9981607
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterForwardWingLiftCurve.m_Curve.Array.data[2].value
+      value: 0.6061305
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRearWingLiftCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRudderWingLiftCurve.m_Curve.Array.data[1].inSlope
+      value: 1.4674435
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterForwardWingLiftCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterForwardWingLiftCurve.m_Curve.Array.data[1].inSlope
+      value: 0.022822969
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRudderWingLiftCurve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRudderWingLiftCurve.m_Curve.Array.data[1].outSlope
+      value: 1.4674435
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterForwardWingLiftCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterForwardWingLiftCurve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterForwardWingLiftCurve.m_Curve.Array.data[1].outSlope
+      value: 0.022822969
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterRudderWingLiftCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083356, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: _fighterForwardWingLiftCurve.m_Curve.Array.data[1].outWeight
+      value: 0.19877155
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083357, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083357, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 78.7455
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083357, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 58.864964
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083357, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.546484
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083357, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083357, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083357, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083357, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083357, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083357, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083357, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477936355228083359, guid: be396fa576be1754db65a3388f997b4b, type: 3}
+      propertyPath: m_Name
+      value: PlaneSpawner
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: be396fa576be1754db65a3388f997b4b, type: 3}

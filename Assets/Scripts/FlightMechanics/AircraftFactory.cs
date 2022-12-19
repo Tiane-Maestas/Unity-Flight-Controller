@@ -7,25 +7,25 @@ public class AircraftFactory
 {
     private AircraftBuilder[] aircraftBuilders = new AircraftBuilder[Enum.GetNames(typeof(AircraftType)).Length];
 
-    public AircraftFactory()
+    public AircraftFactory(Rigidbody aircraftBody)
     {
-        aircraftBuilders[(int)AircraftType.Fighter] = new FighterBuilder();
+        aircraftBuilders[(int)AircraftType.Fighter] = new FighterBuilder(aircraftBody);
     }
 
-    public Aircraft CreateAircraft(AircraftType aircraft, Rigidbody aircraftBody)
+    public Aircraft CreateAircraft(AircraftType aircraft)
     {
         switch (aircraft)
         {
             case AircraftType.Fighter:
-                return Fighter(aircraftBody);
+                return Fighter();
             default:
                 return null;
         }
     }
 
-    private Aircraft Fighter(Rigidbody aircraftBody)
+    private Aircraft Fighter()
     {
-        aircraftBuilders[(int)AircraftType.Fighter].AttachParts(aircraftBody);
+        aircraftBuilders[(int)AircraftType.Fighter].AttachParts();
         return aircraftBuilders[(int)AircraftType.Fighter].Build();
     }
 }
